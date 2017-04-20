@@ -10,7 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/caixa','CaixaController@index');
+
+Route::get('/extrato', 'ExtratoController@index');
+
+Route::get('/saida','SaidaController@index');
+
+Route::get('/entrada','EntradaController@index');

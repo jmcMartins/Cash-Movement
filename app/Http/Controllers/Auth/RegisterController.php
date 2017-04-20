@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\User;
@@ -62,10 +61,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        ($data['level']=='on') ? $data['level']=(int)1:$data['level']=(int)0;
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'level' => $data['level'],
         ]);
     }
 }
