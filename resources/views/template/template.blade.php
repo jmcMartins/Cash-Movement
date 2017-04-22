@@ -37,7 +37,7 @@
 
                             @if(auth()->check())
                                 <li class="list-group-item">
-                                    <a href="{{url('/caixa')}}">
+                                    <a href="{{url('/home')}}">
                                         Caixa
                                     </a>
                                 </li>
