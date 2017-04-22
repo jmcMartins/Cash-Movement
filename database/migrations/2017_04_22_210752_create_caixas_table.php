@@ -13,12 +13,12 @@ class CreateCaixasTable extends Migration
      */
     public function up()
     {
-        Schema::table('caixas', function (Blueprint $table) {
+        Schema::create('caixas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo');
-            $table->string('descricao');
-            $table->string('preco');
+            $table->string('descricao', 150);
+            $table->float('preco',5);
             $table->date('data');
+            $table->enum('tipo',[1,2]);
             $table->timestamps();
         });
     }
@@ -30,8 +30,6 @@ class CreateCaixasTable extends Migration
      */
     public function down()
     {
-        Schema::table('caixas', function (Blueprint $table) {
-            Schema::dropIfExists('caixas');
-        });
+        Schema::dropIfExists('caixas');
     }
 }
