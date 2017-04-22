@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="text-align: center;">
             <h1>Controle de Caixa</h1>
-            <h4>Dia: </h4>
+            <h4>Dia: {{ Form::date('nascimento', '', ['class' => 'form-control']) }}</h4>
             <hr>
         </div>
         <div>

@@ -16,7 +16,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/caixa','CaixaController@index');
+Route::get('sair', 'AuthController@sair');
+Route::post('entrar', 'AuthController@logar');
+
+Route::get('/home','CaixaController@index');
 
 Route::get('/extrato', 'ExtratoController@index');
 
