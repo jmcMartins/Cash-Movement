@@ -4,7 +4,7 @@
 
         {{ Html::style('css/bootstrap.min.css') }}
         {{ Html::style('css/template.css') }}
-        <title>C.Movement - @yield('title')</title>
+        <title>Cash Movement</title>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
