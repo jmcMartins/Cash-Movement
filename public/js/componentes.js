@@ -1,4 +1,13 @@
-function funcao1()
+function funcaoCadastrar()
 {
-	alert("Cadastrado com Sucesso!");
+	$("#descricao").keyup(function() {
+
+		if($("#descricao").val() == ''){
+			$("#submit").attr("disabled", true);
+		}else{
+			alert("Cadastrado com Sucesso!"); 
+		}
+	});
 }
+   
+	
