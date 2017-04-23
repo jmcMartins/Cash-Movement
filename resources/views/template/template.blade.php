@@ -85,5 +85,6 @@
         {{ Html::script('js/app.js') }}
         {{ Html::script('js/jquery.js') }}
         {{ Html::script('js/bootstrap.min.js') }}
+        {{ Html::script('js/componentes.js') }}
     </body>
 </html>
