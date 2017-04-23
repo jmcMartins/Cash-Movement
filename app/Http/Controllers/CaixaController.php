@@ -11,10 +11,12 @@ class CaixaController extends Controller
     {
     	if (auth()->guest())
     		return view('auth.login');
-    	return view('caixa',compact('caixas'));
+    	return view('caixa');
     }
     public function buscar()
   	{
+  		if (auth()->guest())
+    		return view('auth.login');
     	$caixas = Caixa::all();
     	return view('caixaBusca',compact('caixas'));
  	 }

@@ -9,7 +9,7 @@
             <h1>Controle de Caixa</h1>
         </div>
         <div class="form-inline" style="text-align: center;">
-            {{Form::open(['url' => 'caixa/buscar', 'method' => 'POST'])}}
+            {{Form::open(['url' => '/home/buscar', 'method' => 'GET'])}}
                 {{Form::date('dataBusca', ' ', ['class' => 'form-control']) }}
                 {{Form::submit('Buscar', ['class' => 'btn btn-default']) }}
             {{Form::close()}}
