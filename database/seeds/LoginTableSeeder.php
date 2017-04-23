@@ -16,8 +16,8 @@ class LoginTableSeeder extends Seeder
 
         \App\User::create([
             'name' => "Administrador",
-            'email' => "admin@gmail.com",
-            'password' => bcrypt("123456789"),
+            'email' => "admin@admin.com",
+            'password' => bcrypt("admin"),
         ]);
     }
 }

@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-6">
                         {{ Form::label('preco', 'Valor') }}
-                        {{ Form::number('preco', '', ['class' => 'form-control', 'required']) }}
+                        {{ Form::number('preco', '', ['class' => 'form-control', 'required', 'step' => 0.01]) }}
                     </div>
                 </div>
                 <hr>
