@@ -1,4 +1,8 @@
-function funcao1()
+function funcaoCadastrar()
 {
-	alert("Cadastrado com Sucesso!");
+	if($("#descricao").val()!='' &&
+	   $("#data").val()!='' && 
+	   $("#preco").val()!='')
+	   	alert("Cadastrado com Sucesso!");
 }
+	

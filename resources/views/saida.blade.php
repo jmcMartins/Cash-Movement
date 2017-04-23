@@ -17,23 +17,23 @@
                 <div class="form-group row">
                     <div class="col-md-12">
                         {{ Form::label('descricao', 'Descrição') }}
-                        {{ Form::text('descricao', '', ['class' => 'form-control', 'required']) }}
+                        {{ Form::text('descricao', '', ['class' => 'form-control', 'required', 'id' => 'descricao']) }}
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
                         {{ Form::label('data', 'Data') }}
-                        {{ Form::date('data', ' ', ['class' => 'form-control', 'required']) }}
+                        {{ Form::date('data', ' ', ['class' => 'form-control', 'required', 'id' => 'data']) }}
                     </div>
                     <div class="col-md-6">
                         {{ Form::label('preco', 'Valor') }}
-                        {{ Form::number('preco', '', ['class' => 'form-control', 'required', 'step' => 0.01]) }}
+                        {{ Form::number('preco', '', ['class' => 'form-control', 'required', 'step' => 0.01, 'id' => 'preco']) }}
                     </div>
                 </div>
                 <hr>
                 <div class="form-group row">
                     <div class="col-md-12" style="text-align: center;" ">
-                        {{  Form::submit('Cadastrar', ['class' => 'btn btn-default', 'OnClick' => 'funcao1()']) }}
+                        {{  Form::submit('Cadastrar', ['class' => 'btn btn-default', 'OnClick' => 'funcaoCadastrar()']) }}
                     </div>
                 </div>
 
