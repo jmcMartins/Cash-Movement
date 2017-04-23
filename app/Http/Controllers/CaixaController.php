@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Caixa;
 
 class CaixaController extends Controller
 {
@@ -10,6 +11,11 @@ class CaixaController extends Controller
     {
     	if (auth()->guest())
     		return view('auth.login');
-    	return view('caixa');
+    	return view('caixa',compact('caixas'));
     }
+    public function buscar()
+  	{
+    	$caixas = Caixa::all();
+    	return view('caixaBusca',compact('caixas'));
+ 	 }
 }
