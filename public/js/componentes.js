@@ -1,13 +1,8 @@
 function funcaoCadastrar()
 {
-	$("#descricao").keyup(function() {
-
-		if($("#descricao").val() == ''){
-			$("#submit").attr("disabled", true);
-		}else{
-			alert("Cadastrado com Sucesso!"); 
-		}
-	});
+	if($("#descricao").val()!='' &&
+	   $("#data").val()!='' && 
+	   $("#preco").val()!='')
+	   	alert("Cadastrado com Sucesso!");
 }
-   
 	
