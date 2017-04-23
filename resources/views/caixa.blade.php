@@ -14,35 +14,6 @@
                 {{Form::submit('Buscar', ['class' => 'btn btn-default']) }}
             {{Form::close()}}
         </div>
-        <hr>
-        <div>
-            <table class="table" style="margin-left: 20px">
-                <thead>
-                    <tr>
-                    <th>Tipo</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Entrada</td>
-                    <td>Ramalhete</td>
-                    <td>R$89,90</td>
-                  </tr>
-                  <tr>
-                    <td>Saida</td>
-                    <td>Begonea</td>
-                    <td>R$49,90</td>
-                  </tr>
-                  <tr>
-                    <td>Entrada</td>
-                    <td>Orquidea</td>
-                    <td>R$99,90</td>
-                  </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 </div>
 @endsection
