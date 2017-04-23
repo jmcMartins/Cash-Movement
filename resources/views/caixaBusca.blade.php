@@ -34,6 +34,7 @@
                         @endif
                         <td>{{$caixa->descricao}}</td>
                         <td>R$ &nbsp;{{$caixa->preco}}</td>
+                        <td><button class="edit-btn"><i class="glyphicon glyphicon-pencil"></i></a></button>
                       </tr>
                     @empty
                         <tr>
