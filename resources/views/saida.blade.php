@@ -12,12 +12,12 @@
     <div class="panel panel-default col-md-6 col-md-offset-3 ">
         <div class="panel-body">
 
-            {!! Form::open(['url' => '/saida/nova', 'method' => 'post']) !!}
+            {!! Form::open(['url' => '/saida', 'method' => 'post']) !!}
                 {{ Form::hidden('tipo', '2')}}
                 <div class="form-group row">
                     <div class="col-md-12">
-                        {{ Form::label('desc', 'Descrição') }}
-                        {{ Form::text('desc', '', ['class' => 'form-control', 'required']) }}
+                        {{ Form::label('descricao', 'Descrição') }}
+                        {{ Form::text('descricao', '', ['class' => 'form-control', 'required']) }}
                     </div>
                 </div>
                 <div class="form-group row">
@@ -26,8 +26,8 @@
                         {{ Form::date('data', ' ', ['class' => 'form-control', 'required']) }}
                     </div>
                     <div class="col-md-6">
-                        {{ Form::label('valor', 'Valor') }}
-                        {{ Form::number('valor', '', ['class' => 'form-control', 'required']) }}
+                        {{ Form::label('preco', 'Valor') }}
+                        {{ Form::number('preco', '', ['class' => 'form-control', 'required']) }}
                     </div>
                 </div>
                 <hr>

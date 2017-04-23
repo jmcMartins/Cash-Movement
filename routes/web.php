@@ -24,5 +24,8 @@ Route::get('/home','CaixaController@index');
 Route::get('/extrato', 'ExtratoController@index');
 
 Route::get('/saida','SaidaController@index');
+Route::post('/saida','SaidaController@store');
 
 Route::get('/entrada','EntradaController@index');
+Route::post('/entrada','EntradaController@store');
+
