@@ -16,12 +16,13 @@
         </div>
         <hr>
         <div>
-            <table class="table" style="margin-left: 20px">
+            <table class="table" style="margin-left: 5px">
                 <thead>
                     <tr>
                     <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Valor</th>
+                    <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +35,11 @@
                         @endif
                         <td>{{$caixa->descricao}}</td>
                         <td>R$ &nbsp;{{$caixa->preco}}</td>
-                        <td><button class="edit-btn"><i class="glyphicon glyphicon-pencil"></i></a></button>
+                        <td>
+                        <div class="form-inline">
+                            <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-pencil"></i></a></button>
+                            <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-remove-sign"></i></a></button>
+                        </div>
                       </tr>
                     @empty
                         <tr>
