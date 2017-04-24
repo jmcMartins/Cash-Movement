@@ -10,7 +10,8 @@
         </div>
         <div class="form-inline" style="text-align: center;">
             {{Form::open(['url' => '/home/buscar', 'method' => 'GET'])}}
-                {{Form::date('dataBusca', ' ', ['class' => 'form-control']) }}
+                {{-- {{date_default_timezone_set('America/Sao_Paulo') }} --}}
+                {{Form::date('dataBusca', date('Y-m-d'), ['class' => 'form-control']) }}
                 {{Form::submit('Buscar', ['class' => 'btn btn-default']) }}
             {{Form::close()}}
         </div>
@@ -38,8 +39,8 @@
                     <td>R$ &nbsp;{{$caixa->preco}}</td>
                     <td>
                     <div class="form-inline">
-                        <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-pencil"></i></a></button>
-                        <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-remove-sign"></i></a></button>
+                        <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-edit"></i></a></button>
+                        <button class="trash-btn"><a href=""><i class="glyphicon glyphicon glyphicon-trash"></i></a></button>
                     </div>
                   </tr>
                 @empty

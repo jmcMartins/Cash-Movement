@@ -11,7 +11,11 @@ class CaixaController extends Controller
     {
     	if (auth()->guest())
     		return view('auth.login');
-        $caixas = [];
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $date = date('Y-m-d');
+
+        $caixas = Caixa::where('data', $date)->get();
     	return view('caixa', compact('caixas'));
     }
     public function buscar(Request $request)
