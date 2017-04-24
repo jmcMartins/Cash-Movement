@@ -64,8 +64,10 @@
                         <td>R$ &nbsp;{{$caixa->preco}}</td>
                         <td>
                         <div class="form-inline">
-                            <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-edit"></i></a></button>
-                            <button class="trash-btn"><a href=""><i class="glyphicon glyphicon glyphicon-trash"></i></a></button>
+                            <button class="edit-btn"><a href="/extrato/{id}"><i class="glyphicon glyphicon-edit"></i></a></button>
+                            {{ Form::open(['url' => 'extrato/'.$caixa->id, 'method' => 'delete']) }}
+                             <button class="trash-btn"><i class="glyphicon glyphicon glyphicon-trash"></i></button>
+                            {{ Form::close() }}
                         </div>
                       </tr>
                     @endforeach

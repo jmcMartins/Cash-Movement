@@ -25,5 +25,11 @@ class CaixaController extends Controller
 
     	$caixas = Caixa::where('data', $request->dataBusca)->get();
     	return view('caixa',compact('caixas'));
- 	 }
+ 	}
+
+    public function destroy($id)//Exclui item.
+    {
+        Caixa::find($id)->delete();
+        return redirect('home');
+    }
 }

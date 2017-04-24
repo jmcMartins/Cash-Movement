@@ -15,6 +15,7 @@ class ExtratoController extends Controller
         $caixas = [];
     	return view('extrato', compact('caixas'));
     }
+
     public function gerar(Request $request)
   	{
   		if (auth()->guest())
@@ -22,5 +23,11 @@ class ExtratoController extends Controller
 
     	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->get();
     	return view('extrato',compact('caixas'));
- 	 }
+ 	}
+
+    public function destroy($id)//Exclui item.
+    {
+        Caixa::find($id)->delete();
+        return redirect('extrato');
+    }
 }
