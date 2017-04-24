@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Caixa;
 
 class ExtratoController extends Controller
 {
@@ -10,6 +11,16 @@ class ExtratoController extends Controller
     {
     	if (auth()->guest())
     		return view('auth.login');
-    	return view('extrato');
+
+        $caixas = [];
+    	return view('extrato', compact('caixas'));
     }
+    public function gerar(Request $request)
+  	{
+  		if (auth()->guest())
+    		return view('auth.login');
+
+    	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->get();
+    	return view('extrato',compact('caixas'));
+ 	 }
 }

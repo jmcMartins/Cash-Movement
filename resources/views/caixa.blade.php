@@ -31,7 +31,7 @@
                 @forelse($caixas as $caixa)
                   <tr>
                     @if($caixa->tipo == 1)
-                        <td>Venda</td>
+                        <td>Entrada</td>
                     @else
                         <td>Saída</td>
                     @endif
