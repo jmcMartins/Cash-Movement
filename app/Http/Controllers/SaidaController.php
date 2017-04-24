@@ -18,4 +18,12 @@ class SaidaController extends Controller
    		Caixa::create($request->all());
     	return redirect('/saida');
   	}
+
+    public function edit($id)
+    {
+       $caixas = Caixa::find($id);
+
+        return view('edit', compact('caixas'));
+    }
+
 }

@@ -31,7 +31,7 @@
                 </div>
                 <hr>
                 <div class="form-group row">
-                    <div class="col-md-12" style="text-align: center;" ">
+                    <div class="col-md-12" style="text-align: center;">
                         {{  Form::submit('Salvar', ['class' => 'btn btn-default']) }}
                     </div>
                 </div>

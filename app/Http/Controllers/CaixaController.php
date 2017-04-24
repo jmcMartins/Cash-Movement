@@ -22,20 +22,14 @@ class CaixaController extends Controller
   	{
   		if (auth()->guest())
     		return view('auth.login');
-<<<<<<< HEAD
-    	$caixas = Caixa::all();
-    	return view('caixaBusca',compact('caixas'));
- 	}
-=======
 
     	$caixas = Caixa::where('data', $request->dataBusca)->get();
     	return view('caixa',compact('caixas'));
- 	}
+      }
 
     public function destroy($id)//Exclui item.
     {
         Caixa::find($id)->delete();
         return redirect('home');
     }
->>>>>>> 3eb2c08fdb3671aeca1c74ab46b8cba29b946356
 }
