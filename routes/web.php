@@ -6,8 +6,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('sair', 'AuthController@sair');
 Route::post('entrar', 'AuthController@logar');
+Route::get('erro', function() {
+	return view('erro');
+});
 
 Route::get('/home','CaixaController@index');
 Route::get('/home/buscar','CaixaController@buscar');

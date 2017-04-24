@@ -23,7 +23,7 @@
             <header class="top-right links">
                 @if(auth()->check())
                     <a href="{{ url('#') }}">Olá, {{ explode(' ', auth()->user()->name)[0] }}</a>
-                    <a href="{{ url('sair') }}">Sair</a>
+                    <a href="{{ url('logout') }}">Sair</a>
                 @endif
 
                 @section('header')

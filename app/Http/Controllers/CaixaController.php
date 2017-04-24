@@ -13,12 +13,12 @@ class CaixaController extends Controller
     		return view('auth.login');
     	return view('caixa');
     }
-    public function buscar()
+    public function buscar(Request $request)
   	{
   		if (auth()->guest())
     		return view('auth.login');
-    	$caixas = Caixa::where('data', '1997-05-01');
-    	var_dump($caixas);
-    	return view('caixaBusca',compact('caixas'));
+
+    	$caixas = Caixa::where('data', $request->dataBusca)->get();
+    	return view('caixa',compact('caixas'));
  	 }
 }
