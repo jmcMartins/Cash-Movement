@@ -11,7 +11,8 @@ class CaixaController extends Controller
     {
     	if (auth()->guest())
     		return view('auth.login');
-    	return view('caixa');
+        $caixas = [];
+    	return view('caixa', compact('caixas'));
     }
     public function buscar(Request $request)
   	{
