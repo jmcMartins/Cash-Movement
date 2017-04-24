@@ -19,5 +19,5 @@ class CaixaController extends Controller
     		return view('auth.login');
     	$caixas = Caixa::all();
     	return view('caixaBusca',compact('caixas'));
- 	 }
+ 	}
 }
