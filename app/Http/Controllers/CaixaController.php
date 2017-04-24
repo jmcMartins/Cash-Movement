@@ -17,7 +17,8 @@ class CaixaController extends Controller
   	{
   		if (auth()->guest())
     		return view('auth.login');
-    	$caixas = Caixa::all();
+    	$caixas = Caixa::where('data', '1997-05-01');
+    	var_dump($caixas);
     	return view('caixaBusca',compact('caixas'));
  	 }
 }

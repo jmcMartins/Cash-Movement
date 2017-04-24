@@ -42,11 +42,9 @@
                         </div>
                       </tr>
                     @empty
-                        <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        </tr>
+                        <div style="text-align: center;">
+                            <h3><b>Caixa em branco</b></h3>
+                        </div>
                     @endforelse
                 </tbody>
             </table>
