@@ -64,8 +64,8 @@
                         <td>R$ &nbsp;{{$caixa->preco}}</td>
                         <td>
                         <div class="form-inline">
-                            <button class="edit-btn"><a href="/{{$caixa->id}}/edit"><i class="glyphicon glyphicon glyphicon-edit"></i></a></button>
-                            <button class="delete-btn"><a href="/{{$caixa->id}}/delete"><i class="glyphicon glyphicon glyphicon-trash"></i></a></button>
+                            <button class="edit-btn"><a href="{{ url('extrato/'.$caixa->id.'/edit') }}"><i class="glyphicon glyphicon glyphicon-edit"></i></a></button>
+                            <button class="delete-btn"><a href="{{ url('extrato/'.$caixa->id.'/delete') }}"><i class="glyphicon glyphicon glyphicon-trash"></i></a></button>
                         </div>
                       </tr>
                     @endforeach
