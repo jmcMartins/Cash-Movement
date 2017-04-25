@@ -25,9 +25,16 @@ class ExtratoController extends Controller
     	return view('extrato',compact('caixas'));
  	}
 
-    public function destroy($id)//Exclui item.
+    public function destroy($id)
     {
         Caixa::find($id)->delete();
-        return redirect('extrato');
+        return redirect()->back();
+    }
+
+    public function edit($id)
+    {
+       $caixas = Caixa::find($id);
+
+        return view('edit', compact('caixas'));
     }
 }

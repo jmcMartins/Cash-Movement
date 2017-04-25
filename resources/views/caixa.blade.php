@@ -39,10 +39,8 @@
                     <td>R$ &nbsp;{{$caixa->preco}}</td>
                     <td>
                     <div class="form-inline">
-                        <button class="edit-btn"><a href=""><i class="glyphicon glyphicon-edit"></i></a></button>
-                        {{ Form::open(['url' => 'home/'.$caixa->id, 'method' => 'delete']) }}
-                        <button class="trash-btn"><i class="glyphicon glyphicon glyphicon-trash"></i></button>
-                        {{ Form::close() }}
+                        <button class="edit-btn"><a href="{{$caixa->id}}/edit"><i class="glyphicon glyphicon glyphicon-edit"></i></a></button>
+                        <button class="edit-btn"><a href="{{$caixa->id}}/delete"><i class="glyphicon glyphicon glyphicon-trash"></i></a></button>
                     </div>
                   </tr>
                 @empty

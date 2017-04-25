@@ -30,6 +30,18 @@ class CaixaController extends Controller
     public function destroy($id)//Exclui item.
     {
         Caixa::find($id)->delete();
-        return redirect('home');
+        return redirect()->back();
+    }
+
+    public function edit($id)
+    {
+       $caixas = Caixa::find($id);
+
+        return view('edit', compact('caixas'));
+    }
+    public function update(Request $request, $id)//Edita item.
+    {
+        Caixa::find($id)->update($request->all());
+        return redirect()->back();
     }
 }

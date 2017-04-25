@@ -11,17 +11,17 @@ Route::get('erro', function() {
 	return view('erro');
 });
 
+Route::put('/editar/{id}', 'CaixaController@update');
+
 Route::get('/home','CaixaController@index');
 Route::get('/home/buscar','CaixaController@buscar');
-Route::delete('/home/{id}', 'CaixaController@destroy');
-Route::put('/home/{id}', 'SaidaController@update');
-Route::get('/home/{id}/edit', 'SaidaController@edit');
+Route::get('/home/{id}/delete', 'CaixaController@destroy');
+Route::get('/home/{id}/edit', 'CaixaController@edit');
 
 Route::get('/extrato', 'ExtratoController@index');
 Route::get('/extrato/gerar', 'ExtratoController@gerar');
-Route::delete('/extrato/{id}', 'ExtratoController@destroy');
-Route::put('/extrato/{id}', 'SaidaController@update');
-Route::get('/extrato/{id}/edit', 'SaidaController@edit');
+Route::get('/extrato/{id}/delete', 'ExtratoController@destroy');
+Route::get('/extrato/{id}/edit', 'ExtratoController@edit');
 
 Route::get('/saida','SaidaController@index');
 Route::post('/saida','SaidaController@store');

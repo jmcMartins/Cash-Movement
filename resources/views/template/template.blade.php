@@ -23,7 +23,12 @@
             <header class="top-right links">
                 @if(auth()->check())
                     <a href="{{ url('#') }}">Olá, {{ explode(' ', auth()->user()->name)[0] }}</a>
-                    <a href="{{ url('logout') }}">Sair</a>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Sair
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 @endif
 
                 @section('header')
