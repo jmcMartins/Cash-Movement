@@ -10,7 +10,10 @@ class ExtratoController extends Controller
 
     public function index()
     {
-        $caixas = [];
+        $caixas = Caixa::where('data', '>=', date('Y-m-d'))
+            ->where('data' , '<=', date('Y-m-d'))
+            ->orderBy('data', 'ASC')
+        ->get();
     	return view('extrato', compact('caixas'));
     }
 
