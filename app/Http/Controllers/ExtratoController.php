@@ -16,7 +16,11 @@ class ExtratoController extends Controller
 
     public function gerar(Request $request)
   	{
-    	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->orderBy('data', 'ASC')->get();
+    	$caixas = Caixa::where('data', '>=', $request->dataInic)
+            ->where('data' , '<=', $request->dataFinal)
+            ->orderBy('data', 'ASC')
+        ->get();
+
     	return view('extrato',compact('caixas', 'caixaData'));
  	}
 
