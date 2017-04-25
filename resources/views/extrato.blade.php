@@ -59,7 +59,7 @@
                         @else
                             <td>Saída</td>
                         @endif
-                        <td>{{$caixa->data}}</td>
+                        <td> {{date('d/m/Y', strtotime($caixa->data))}} </td>
                         <td>{{$caixa->descricao}}</td>
                         <td>R$ &nbsp;{{$caixa->preco}}</td>
                         <td>

@@ -15,23 +15,23 @@
                 <div class="form-group row">
                     <div class="col-md-12">
                         {{ Form::label('descricao', 'Descrição') }}
-                        {{ Form::text('descricao', $caixas->descricao, ['class' => 'form-control', 'required']) }}
+                        {{ Form::text('descricao', $caixas->descricao, ['class' => 'form-control', 'required', 'id' => 'descricao']) }}
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
                         {{ Form::label('data', 'Data') }}
-                        {{ Form::date('data', $caixas->data, ['class' => 'form-control', 'required']) }}
+                        {{ Form::date('data', $caixas->data, ['class' => 'form-control', 'required', 'id' => 'data']) }}
                     </div>
                     <div class="col-md-6">
                         {{ Form::label('preco', 'Valor') }}
-                        {{ Form::number('preco', $caixas->preco, ['class' => 'form-control', 'required']) }}
+                        {{ Form::number('preco', $caixas->preco, ['class' => 'form-control','step' => 0.01, 'required', 'id' => 'preco']) }}
                     </div>
                 </div>
                 <hr>
                 <div class="form-group row">
                     <div class="col-md-12" style="text-align: center;">
-                        {{  Form::submit('Salvar', ['class' => 'btn btn-default']) }}
+                        {{  Form::submit('Salvar', ['class' => 'btn btn-default', 'OnClick' => 'funcaoEditar()']) }}
                     </div>
                 </div>
             {!! Form::close() !!}

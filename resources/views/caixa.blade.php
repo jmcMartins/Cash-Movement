@@ -22,6 +22,7 @@
             <thead>
                 <tr>
                 <th>Tipo</th>
+                <th>Data</th>
                 <th>Descrição</th>
                 <th>Valor</th>
                 <th>Ação</th>
@@ -35,6 +36,7 @@
                     @else
                         <td>Saída</td>
                     @endif
+                    <td> {{date('d/m/Y', strtotime($caixa->data))}} </td>
                     <td>{{$caixa->descricao}}</td>
                     <td>R$ &nbsp;{{$caixa->preco}}</td>
                     <td>

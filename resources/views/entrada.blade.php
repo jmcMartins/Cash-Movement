@@ -32,7 +32,7 @@
                 </div>
                 <hr>
                 <div class="form-group row">
-                    <div class="col-md-12" style="text-align: center;" ">
+                    <div class="col-md-12" style="text-align: center;">
                         {{  Form::submit('Cadastrar', ['class' => 'btn btn-default', 'OnClick' => 'funcaoCadastrar()']) }}
                     </div>
                 </div>

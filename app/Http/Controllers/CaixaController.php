@@ -13,7 +13,8 @@ class CaixaController extends Controller
     		return view('auth.login');
 
         date_default_timezone_set('America/Sao_Paulo');
-        $date = date('Y-m-d');
+        $date = date('d/m/Y');
+        
 
         $caixas = Caixa::where('data', $date)->get();
     	return view('caixa', compact('caixas'));
@@ -23,7 +24,7 @@ class CaixaController extends Controller
   		if (auth()->guest())
     		return view('auth.login');
 
-    	$caixas = Caixa::where('data', $request->dataBusca)->get();
+    	$caixas = Caixa::where('data', $request->dataBusca)->orderBy('data', 'ASC')->get();
     	return view('caixa',compact('caixas'));
       }
 

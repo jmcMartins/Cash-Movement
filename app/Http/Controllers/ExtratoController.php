@@ -7,6 +7,7 @@ use App\Caixa;
 
 class ExtratoController extends Controller
 {
+
     public function index()
     {
     	if (auth()->guest())
@@ -21,8 +22,8 @@ class ExtratoController extends Controller
   		if (auth()->guest())
     		return view('auth.login');
 
-    	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->get();
-    	return view('extrato',compact('caixas'));
+    	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->orderBy('data', 'ASC')->get();
+    	return view('extrato',compact('caixas', 'caixaData'));
  	}
 
     public function destroy($id)
@@ -34,7 +35,6 @@ class ExtratoController extends Controller
     public function edit($id)
     {
        $caixas = Caixa::find($id);
-
         return view('edit', compact('caixas'));
     }
 }
