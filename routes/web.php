@@ -12,6 +12,7 @@ Route::get('erro', function() {
 });
 
 Route::put('/editar/{id}', 'CaixaController@update');
+Route::get('/editar', 'CaixaController@editIndex');
 
 Route::get('/home','CaixaController@index');
 Route::get('/home/buscar','CaixaController@buscar');
