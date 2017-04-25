@@ -11,9 +11,9 @@
         <div class="form-inline" style="text-align: center;">
             {{Form::open(['url' => 'extrato/gerar', 'method' => 'GET'])}}
                 {{Form::label('dataInic', 'De: ') }}
-                {{Form::date('dataInic', ' ', ['class' => 'form-control', 'required']) }}
+                {{Form::date('dataInic', isset($_GET['dataInic']) ? $_GET['dataInic'] : date('Y-m-d'), ['class' => 'form-control', 'required']) }}
                 {{Form::label('dataFinal', 'Até: ') }}
-                {{Form::date('dataFinal', ' ', ['class' => 'form-control', 'required']) }}
+                {{Form::date('dataFinal', isset($_GET['dataFinal']) ? $_GET['dataFinal'] : date('Y-m-d'), ['class' => 'form-control', 'required']) }}
                 {{Form::submit('Gerar Extrato', ['class' => 'btn btn-default']) }}
             {{Form::close()}}
         </div>
