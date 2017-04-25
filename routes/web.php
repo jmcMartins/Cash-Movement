@@ -10,7 +10,7 @@ Route::get('erro', function() {
 	return view('erro');
 });
 
-Route::group(['middlware' => 'auth'], function () {
+Route::group(['middlware' => 'auth' ], function () {
 
 	Route::group(['prefix' => 'editar'], function() {
 		Route::get('', 				'CaixaController@editIndex');

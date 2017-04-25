@@ -12,6 +12,9 @@
         <div class="panel-body">
 
             {!! Form::open(['url' => '/editar/'.$caixas->id, 'method' => 'put']) !!}
+                @if(isset($simples) and $simples)
+                    {{Form::hidden('simples', true)}}
+                @endif
                 <div class="form-group row">
                     <div class="col-md-12">
                         {{ Form::label('descricao', 'Descrição') }}

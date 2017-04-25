@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Caixa;
 
+
 class CaixaController extends Controller
 {
     public function index()
@@ -12,11 +13,12 @@ class CaixaController extends Controller
         $caixas = Caixa::where('data', date('Y-m-d'))->orderBy('data', 'ASC')->get();
     	return view('caixa', compact('caixas'));
     }
+
     public function buscar(Request $request)
   	{
     	$caixas = Caixa::where('data', $request->dataBusca)->orderBy('data', 'ASC')->get();
     	return view('caixa',compact('caixas'));
-      }
+    }
 
     public function destroy($id)
     {
@@ -28,6 +30,9 @@ class CaixaController extends Controller
     {
         $caixas = Caixa::find($id);
 
+        if(stripos(session()->get('_previous')['url'], 'home') !== false)
+            return view('edit', compact('caixas'))->withSimples(true);
+
         return view('edit', compact('caixas'));
     }
 
@@ -35,11 +40,11 @@ class CaixaController extends Controller
     {
         Caixa::find($id)->update($request->all());
 
-        if( !session()->has('inicio') or !session()->has('fim') )
+        if( $request->has('simples') )
             return redirect('home/buscar?dataBusca='.$request->data);
 
-        $datas = session()->all();
-        session()->flush();
-        return redirect('extrato/gerar?dataInic='.$datas['inicio'].'&dataFinal='.$datas['fim']);
+        $inicio = session()->get('inicio');
+        $fim = session()->get('fim');
+        return redirect('extrato/gerar?dataInic='.$inicio.'&dataFinal='.$fim);
     }
 }
