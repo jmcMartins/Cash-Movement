@@ -34,6 +34,12 @@ class CaixaController extends Controller
     public function update(Request $request, $id)
     {
         Caixa::find($id)->update($request->all());
-        return redirect('home/buscar?dataBusca='.$request->data);
+
+        if( !session()->has('inicio') or !session()->has('fim') )
+            return redirect('home/buscar?dataBusca='.$request->data);
+
+        $datas = session()->all();
+        session()->flush();
+        return redirect('extrato/gerar?dataInic='.$datas['inicio'].'&dataFinal='.$datas['fim']);
     }
 }

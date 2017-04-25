@@ -19,6 +19,12 @@ class ExtratoController extends Controller
 
     public function gerar(Request $request)
   	{
+        session([
+            'inicio' => $request->dataInic,
+            'fim' => $request->dataFinal
+        ]);
+
+
     	$caixas = Caixa::where('data', '>=', $request->dataInic)
             ->where('data' , '<=', $request->dataFinal)
             ->orderBy('data', 'ASC')
