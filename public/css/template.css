@@ -19,7 +19,7 @@ a
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    background-color: black;
+    background-color: white;
     color: white;
 }
 
@@ -31,7 +31,7 @@ a
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    background-color: black;
+    background-color: white;
 }
 
 .delete-btn a i { color: red; }
