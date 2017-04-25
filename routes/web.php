@@ -6,26 +6,38 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::post('entrar', 'AuthController@logar');
 Route::get('erro', function() {
 	return view('erro');
 });
 
-Route::put('/editar/{id}', 'CaixaController@update');
-Route::get('/editar', 'CaixaController@editIndex');
+Route::group(['middlware' => 'auth'], function () {
 
-Route::get('/home','CaixaController@index');
-Route::get('/home/buscar','CaixaController@buscar');
-Route::get('/home/{id}/delete', 'CaixaController@destroy');
-Route::get('/home/{id}/edit', 'CaixaController@edit');
+	Route::group(['prefix' => 'editar'], function() {
+		Route::get('', 				'CaixaController@editIndex');
+		Route::put('{id}', 			'CaixaController@update');
+	});
 
-Route::get('/extrato', 'ExtratoController@index');
-Route::get('/extrato/gerar', 'ExtratoController@gerar');
-Route::get('/extrato/{id}/delete', 'ExtratoController@destroy');
-Route::get('/extrato/{id}/edit', 'ExtratoController@edit');
+	Route::group(['prefix' => 'home'], function() {
+		Route::get('',				'CaixaController@index');
+		Route::get('buscar',		'CaixaController@buscar');
+		Route::get('{id}/delete', 	'CaixaController@destroy');
+		Route::get('{id}/edit', 	'CaixaController@edit');
+	});
 
-Route::get('/saida','SaidaController@index');
-Route::post('/saida','SaidaController@store');
+	Route::group(['prefix' => 'extrato'], function() {
+		Route::get('', 				'ExtratoController@index');
+		Route::get('gerar', 		'ExtratoController@gerar');
+		Route::get('{id}/delete', 	'ExtratoController@destroy');
+		Route::get('{id}/edit', 	'ExtratoController@edit');
+	});
 
-Route::get('/entrada','EntradaController@index');
-Route::post('/entrada','EntradaController@store');
+	Route::group(['prefix' => 'saida'], function() {
+		Route::get('',				'SaidaController@index');
+		Route::post('',				'SaidaController@store');
+	});
+
+	Route::group(['prefix' => 'entrada'], function() {
+		Route::get('',				'EntradaController@index');
+		Route::post('',				'EntradaController@store');
+	});
+});

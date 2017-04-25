@@ -10,18 +10,12 @@ class ExtratoController extends Controller
 
     public function index()
     {
-    	if (auth()->guest())
-    		return view('auth.login');
-
         $caixas = [];
     	return view('extrato', compact('caixas'));
     }
 
     public function gerar(Request $request)
   	{
-  		if (auth()->guest())
-    		return view('auth.login');
-
     	$caixas = Caixa::where('data', '>=', $request->dataInic, 'AND', $request->dataFinal , '<=')->orderBy('data', 'ASC')->get();
     	return view('extrato',compact('caixas', 'caixaData'));
  	}
@@ -34,7 +28,7 @@ class ExtratoController extends Controller
 
     public function edit($id)
     {
-       $caixas = Caixa::find($id);
+        $caixas = Caixa::find($id);
         return view('edit', compact('caixas'));
     }
 }
