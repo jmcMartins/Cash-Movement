@@ -9,7 +9,7 @@ class CaixaController extends Controller
 {
     public function index()
     {
-        $caixas = [];
+        $caixas = Caixa::where('data', date('Y-m-d'))->orderBy('data', 'ASC')->get();
     	return view('caixa', compact('caixas'));
     }
     public function buscar(Request $request)
