@@ -10,7 +10,7 @@
         </div>
         <div class="form-inline" style="text-align: center;">
             {{Form::open(['url' => '/home/buscar', 'method' => 'GET'])}}
-                {{Form::date('dataBusca', ' ', ['class' => 'form-control']) }}
+                {{Form::date('dataBusca', isset($_GET['dataBusca']) ? $_GET['dataBusca'] : date('Y-m-d'), ['class' => 'form-control']) }}
                 {{Form::submit('Buscar', ['class' => 'btn btn-default']) }}
             {{Form::close()}}
         </div>
