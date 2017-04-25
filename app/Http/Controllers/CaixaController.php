@@ -34,6 +34,6 @@ class CaixaController extends Controller
     public function update(Request $request, $id)
     {
         Caixa::find($id)->update($request->all());
-        return redirect()->back();
+        return redirect('home/buscar?dataBusca='.$request->data);
     }
 }
