@@ -23,6 +23,8 @@ a
     color: white;
 }
 
+
+
 .delete-btn
 {
     border: none;
@@ -30,8 +32,9 @@ a
     height: 30px;
     border-radius: 50px;
     background-color: black;
-    color: red;
 }
+
+.delete-btn a i { color: red; }
 .acoes {
     float: right;
     margin-top: -20px;
