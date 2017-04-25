@@ -16,7 +16,7 @@ class CreateCaixasTable extends Migration
         Schema::create('caixas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descricao', 150);
-            $table->float('preco',5);
+            $table->decimal('preco',5);
             $table->date('data');
             $table->enum('tipo',[1,2]);
             $table->timestamps();
